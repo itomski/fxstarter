@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lubowiecki.fxstarter.MainController">
+   <children>
+     <Label layoutX="25.0" layoutY="20.0" text="Produktverwaltung" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+     </Label>
+
+     <Label layoutX="25.0" layoutY="80.0" text="Name:" AnchorPane.leftAnchor="20.0" />
+     <TextField fx:id="name" layoutX="25.0" layoutY="102.0" prefHeight="25.0" prefWidth="246.0" AnchorPane.leftAnchor="20.0" />
+
+     <Label layoutX="25.0" layoutY="136.0" text="Beschreibung:" AnchorPane.leftAnchor="20.0" />
+     <TextArea fx:id="description" layoutX="25.0" layoutY="159.0" prefHeight="69.0" prefWidth="246.0" AnchorPane.leftAnchor="20.0" />
+
+     <Label layoutX="26.0" layoutY="238.0" text="Anzahl:" AnchorPane.leftAnchor="20.0" />
+     <Spinner fx:id="count" layoutX="28.0" layoutY="262.0" max="1000" min="0" prefHeight="25.0" prefWidth="74.0" AnchorPane.leftAnchor="20.0" />
+
+     <Label layoutX="20.0" layoutY="295.0" text="Im Bestand seit:" AnchorPane.leftAnchor="20.0" />
+     <DatePicker fx:id="availableSince" layoutX="20.0" layoutY="318.0" prefHeight="25.0" prefWidth="246.0" AnchorPane.leftAnchor="20.0" />
+
+     <Label layoutX="20.0" layoutY="352.0" text="Preis:" />
+     <TextField fx:id="price" layoutX="20.0" layoutY="374.0" prefHeight="25.0" prefWidth="246.0" />
+
+     <Button layoutX="20.0" layoutY="417.0" mnemonicParsing="false" onAction="#save" text="Speichern" />
+      <Separator layoutX="294.0" layoutY="20.0" orientation="VERTICAL" prefHeight="480.0" prefWidth="2.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="290.0" AnchorPane.topAnchor="20.0" />
+      <TableView fx:id="productTable" layoutX="314.0" layoutY="27.0" prefHeight="460.0" prefWidth="466.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <columns>
+          <TableColumn prefWidth="71.0" text="Name">
+            <cellValueFactory>
+              <PropertyValueFactory property="name" />
+            </cellValueFactory>
+          </TableColumn>
+          
+          <TableColumn prefWidth="158.0" text="Beschreibung">
+            <cellValueFactory>
+              <PropertyValueFactory property="description" />
+            </cellValueFactory>
+          </TableColumn>
+
+          <TableColumn prefWidth="62.0" text="Anzahl">
+            <cellValueFactory>
+              <PropertyValueFactory property="count" />
+            </cellValueFactory>
+          </TableColumn>
+
+          <TableColumn prefWidth="106.0" text="Im Bestand seit">
+            <cellValueFactory>
+              <PropertyValueFactory property="availableSince" />
+            </cellValueFactory>
+          </TableColumn>
+
+          <TableColumn prefWidth="68.0" text="Preis">
+            <cellValueFactory>
+              <PropertyValueFactory property="price" />
+            </cellValueFactory>
+          </TableColumn>
+
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
